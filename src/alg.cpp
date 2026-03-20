@@ -36,17 +36,17 @@ unsigned int collatzLen(uint64_t num) {
 }
 
 unsigned int seqCollatz(unsigned int *maxlen, uint64_t lbound, uint64_t rbound) {
-  unsigned int best_len = 0;
-  unsigned int best_num = static_cast<unsigned int>(lbound);
+  unsigned int mxlen = 0;
+  unsigned int mx = static_cast<unsigned int>(lbound);
 
-  for (uint64_t num = lbound; num <= rbound; ++num) {
-    unsigned int len = collatzLen(num);
-    if (len > best_len) {
-      best_len = len;
-      best_num = static_cast<unsigned int>(num);
+  for (uint64_t i = lbound; i <= rbound; ++i) {
+    unsigned int l = collatzLen(i);
+    if (l > mxlen) {
+      mxlen = l;
+      mx = static_cast<unsigned int>(i);
     }
   }
-    *maxlen = best_len;
 
-  return best_num;
+  *maxlen = mxlen;
+  return mx;
 }
