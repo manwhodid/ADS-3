@@ -35,7 +35,9 @@ unsigned int collatzLen(uint64_t num) {
   return len;
 }
 
-unsigned int seqCollatz(unsigned int *maxlen, uint64_t lbound, uint64_t rbound) {
+unsigned int seqCollatz(unsigned int *maxlen,
+                        uint64_t lbound,
+                        uint64_t rbound) {
   unsigned int mxlen = 0;
   unsigned int mx = static_cast<unsigned int>(lbound);
 
